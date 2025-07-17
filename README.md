@@ -1,5 +1,4 @@
-# testimonial-slider
-Rotating testimonials for Day Notary Pro
+
 <div id="testimonial-slider" style="max-width: 800px; margin: 0 auto; padding: 2em 1em; text-align: center; font-family: sans-serif;">
   <div class="testimonial active">
     <p>“Tunde was responsive, professional, and easy to work with. He met me within the hour and made the process stress-free.”</p>
