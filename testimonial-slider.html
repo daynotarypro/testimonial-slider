@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+    .testimonial-container {
+      background-color: #ccc;
+      color: #000;
+      padding: 30px 20px;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+      font-size: 1.1em;
+      height: 140px;
+    }
+    .testimonial {
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      position: absolute;
+      width: 100%;
+      top: 30px;
+      left: 0;
+    }
+    .testimonial.active {
+      opacity: 1;
+      position: relative;
+    }
+    .author {
+      font-weight: bold;
+      margin-top: 10px;
+      display: block;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="testimonial-container">
+    <div class="testimonial active">
+      <p>“I called around and nobody was available for a jail signing. Then I found Tunde at Day Notary Pro. He showed up early, handled everything cleanly, and even gave me a few pointers for next time. Real one.”<br/>
+      <span class="author">— Albert E., Fontana</span></p>
+    </div>
+    <div class="testimonial">
+      <p>“I didn’t even know you could get a document notarized at a hospital until I called Tunde. Professional, fast, and you could tell he actually cared. I’ve got him saved in my phone now.”<br/>
+      <span class="author">— Jessica R., Lakewood</span></p>
+    </div>
+    <div class="testimonial">
+      <p>“Booked online, he was at my door the same day. Explained the process, double-checked everything, and it all went smoothly. Highly recommend Tunde for anything notary.”<br/>
+      <span class="author">— Mo A., Long Beach</span></p>
+    </div>
+  </div>
+
+  <script>
+    const testimonials = document.querySelectorAll('.testimonial');
+    let index = 0;
+
+    setInterval(() => {
+      testimonials[index].classList.remove('active');
+      index = (index + 1) % testimonials.length;
+      testimonials[index].classList.add('active');
+    }, 5000);
+  </script>
+</body>
+</html>
