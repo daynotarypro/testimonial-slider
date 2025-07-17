@@ -1,56 +1,75 @@
-<div class="testimonial-rotator" style="max-width: 800px; margin: 0 auto; padding: 2em 1em; background-color: #f4f4f4; text-align: center; font-family: sans-serif; border-radius: 8px;">
-  <div class="testimonial active">
-    <p>“Tunde was responsive, professional, and easy to work with. He met me within the hour and made the process stress-free.”</p>
-    <strong>— Monica R., Long Beach</strong>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Day Notary Pro Testimonials</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #e5e5e5;
+    }
+
+    .testimonial-container {
+      background-color: #e5e5e5;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 250px;
+      position: relative;
+    }
+
+    .testimonial {
+      max-width: 700px;
+      text-align: center;
+      font-size: 18px;
+      color: #333;
+      opacity: 0;
+      transform: translateX(50px);
+      transition: opacity 1s ease, transform 1s ease;
+      position: absolute;
+    }
+
+    .testimonial.active {
+      opacity: 1;
+      transform: translateX(0);
+      position: relative;
+    }
+
+    .author {
+      margin-top: 15px;
+      font-weight: bold;
+      font-style: italic;
+      color: #222;
+    }
+  </style>
+</head>
+<body>
+  <div class="testimonial-container">
+    <div class="testimonial active">
+      “Tunde was responsive, professional, and easy to work with. He met me within the hour and made the process stress-free.”
+      <div class="author">— Monica R., Long Beach</div>
+    </div>
+    <div class="testimonial">
+      “I called around and nobody was available for a jail signing. Then I found Tunde at Day Notary Pro. He showed up early, handled everything cleanly, and even gave me a few pointers for next time. Real one.”
+      <div class="author">— Albert E., Fontana</div>
+    </div>
+    <div class="testimonial">
+      “Tunde showed up to the hospital with everything ready. Kind, respectful, and extremely knowledgeable.”
+      <div class="author">— Kevin S., Bellflower</div>
+    </div>
   </div>
-  <div class="testimonial">
-    <p>“I called around and nobody was available for a jail signing. Then I found Tunde at Day Notary Pro. He showed up early, handled everything cleanly, and even gave me a few pointers for next time. Real one.”</p>
-    <strong>— Albert E., Fontana</strong>
-  </div>
-  <div class="testimonial">
-    <p>“Tunde showed up to the hospital with everything ready. Kind, respectful, and extremely knowledgeable.”</p>
-    <strong>— Kevin S., Bellflower</strong>
-  </div>
-</div>
 
-<style>
-  .testimonial-rotator .testimonial {
-    display: none;
-    opacity: 0;
-    transform: translateX(50px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
+  <script>
+    const testimonials = document.querySelectorAll('.testimonial');
+    let index = 0;
 
-  .testimonial-rotator .testimonial.active {
-    display: block;
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  .testimonial-rotator p {
-    font-size: 1.25em;
-    margin-bottom: 0.5em;
-    line-height: 1.6;
-    color: #333;
-  }
-
-  .testimonial-rotator strong {
-    display: block;
-    margin-top: 0.25em;
-    font-size: 1em;
-    color: #555;
-  }
-</style>
-
-<script>
-  const testimonials = document.querySelectorAll(".testimonial-rotator .testimonial");
-  let index = 0;
-
-  function showNextTestimonial() {
-    testimonials[index].classList.remove("active");
-    index = (index + 1) % testimonials.length;
-    testimonials[index].classList.add("active");
-  }
-
-  setInterval(showNextTestimonial, 6000); // rotates every 6 seconds
-</script>
+    setInterval(() => {
+      testimonials[index].classList.remove('active');
+      index = (index + 1) % testimonials.length;
+      testimonials[index].classList.add('active');
+    }, 5000);
+  </script>
+</body>
+</html>
